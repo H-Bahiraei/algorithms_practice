@@ -5,8 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author Mehrad https://github.com/H-Bahiraei
@@ -15,6 +14,16 @@ import java.util.Scanner;
  * &
  */
 public class WorkInString {
+
+    public static void main(String[] args) {
+        WorkInString workInString = new WorkInString();
+        String[] strings = workInString.seedArray(10);
+        System.out.println("strings = " + Arrays.toString(strings));
+        System.out.println("strings = " + workInString.searchSet(strings, strings[0]));
+//        System.out.println("strings = " + workInString.searchSet(strings, ""));
+
+    }
+
     public String calculateTimeForFindSubString(String str1, String str2) {
         Instant start = Instant.now();
         String result = str1.contains(str2) ? "found!" : "not found!";
@@ -47,4 +56,20 @@ public class WorkInString {
         return finalString.toCharArray();
 
     }
+
+    String[] seedArray(int length) {
+        String[] strings = new String[length];
+        Random value = new Random();
+        for (int i = 0; i < length; i++) {
+            strings[i] = String.valueOf(value.nextInt());
+        }
+        return strings;
+    }
+
+    boolean searchSet(String[] strings, String searchString) {
+        Set<String> stringSet = new HashSet<>(Arrays.asList(strings));
+        return stringSet.contains(searchString);
+    }
+
+
 }
