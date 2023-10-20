@@ -26,14 +26,14 @@ public class StringTest {
     }
 
     @Test
-    void giveAnArrayFromADocument(){
+    void giveAnArrayFromADocument() {
 //        given
-        String path= "E:\\algorithms_practice\\src\\main\\resources\\input.text";
-        int length=0;
+        String path = "E:\\algorithms_practice\\src\\main\\resources\\input.text";
+        int length = 0;
 
         //        then
         WorkInString workInString = new WorkInString();
-        char[] finalCharArray =workInString.convertTextFileToCharArray(path);
+        char[] finalCharArray = workInString.convertTextFileToCharArray(path);
         length = finalCharArray.length;
         Assertions.assertNotEquals(length, 0);
 
