@@ -21,21 +21,21 @@ public class TwoSumTest {
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
 //            output: an array with two indices
 
-//        Integer[] arrTest= {9, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] arrTest= {5, 2, 3, 4, 4, 6, 7, 8, 9};
         Integer target = 10;
 
-//        Integer[] realResult= {1,7};
+//        int[] realResult= {1,7};
 
-        Integer[] arrTest = new Integer[1000];
-        Random random = new Random();
-        for (int i = 0; i < 1000; i++) {
-            arrTest[i] = random.nextInt() % 10;
-        }
+//        int[] arrTest = new int[1000];
+//        Random random = new Random();
+//        for (int i = 0; i < 1000; i++) {
+//            arrTest[i] = random.nextInt() % 10;
+//        }
 
 
 //when
         TwoSum twoSum = new TwoSum();
-        Integer[] methodResult = twoSum.findIndices(arrTest, target);
+        int[] methodResult = twoSum.findIndices(arrTest, target);
 //        Assertions.assertArrayEquals(methodResult,realResult);
 
     }
