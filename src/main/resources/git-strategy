@@ -12,9 +12,9 @@ Developer:
 -	Create f1: (git flow feature start Initializing-Spring-Boot) by bash
 -	Do changes (Intellij: Initialize SpringBoot replacing on that folder)
 -	Add and commit on local f1 by intellij- msg: closes #task_number
--	Pull (origin to local: Dev)
+-	in local dev: Pull (origin to local: Dev)
 -	git log --oneline --graph –all
--	Rebase local Dev to f1 (git rebase development) by bash
+-	in local f: Rebase local Dev to f1 (git rebase development) by bash
 -	git log --oneline --graph –all
 -	Finish f1 (git flow feature finish Initializing-Spring-Boot) (auto merge to local dev) by bash- (instead of merge by local dev)
 -	Push Local dev to origin. By intellij or bash
