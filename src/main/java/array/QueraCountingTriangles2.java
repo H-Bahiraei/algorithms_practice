@@ -18,10 +18,10 @@ public class QueraCountingTriangles2 {
 
         // Counting triangles
         int count = 0;
-        for (int e1 = 1; e1 <= n; e1++) {
-            for (int e2 = e1; e2 <= n; e2++) {
+        for (int e1 = 1; e1 <= n / 3; e1++) {
+            for (int e2 = e1; e2 <= (n - e1) / 2; e2++) {
                 int e3 = n - e1 - e2;
-                if (e3 >= e2 && e1 + e2 > e3) {
+                if (e1 + e2 > e3) {
                     // Valid triangle
                     count++;
                 }
@@ -34,6 +34,5 @@ public class QueraCountingTriangles2 {
         // Close the scanner
         scanner.close();
     }
-
 
 }
