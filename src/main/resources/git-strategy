@@ -1,6 +1,6 @@
 PO:
 -	Create Upstream and define some tasks
--	Clone on local (git clone git@github.com:H-Bahiraei/tracking-price.git) , cd
+-	Clone on local (git clone git@github.com:H-Bahiraei/tracking-price.git) , or with IntelliJ
 -	Git flow init (git flow init)
 -	Push dev to origin (git push --set-upstream origin development)
 
