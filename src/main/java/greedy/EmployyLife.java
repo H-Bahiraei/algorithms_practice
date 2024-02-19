@@ -11,7 +11,49 @@ import java.util.Scanner;
  */
 public class EmployyLife {
 
+
+    /*
+    #In the name of God
+
+input()
+task=list(map(int,input().split()))
+count_of_task=0
+current_time=1
+for x in sorted(task):
+    #if deadline of task 'x' be <= 'current_time', add 1 to 'count_of_task'
+    if current_time<=x:
+        current_time+=1
+        count_of_task+=1
+print(count_of_task)
+     */
+
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        scanner.nextLine(); // Skipping the first input line as it's not used in the calculation
+
+        String[] tasksStr = scanner.nextLine().split(" ");
+        int[] tasks = new int[tasksStr.length];
+        for (int i = 0; i < tasksStr.length; i++) {
+            tasks[i] = Integer.parseInt(tasksStr[i]);
+        }
+
+        int countOfTasks = 0;
+        int currentTime = 1;
+        Arrays.sort(tasks);
+        for (int x : tasks) {
+            if (currentTime <= x) {
+                currentTime++;
+                countOfTasks++;
+            }
+        }
+
+        System.out.println(countOfTasks);
+    }
+
+
+    public static void main1(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int[] inputArray = new int[n];
@@ -47,8 +89,7 @@ public class EmployyLife {
 
             }
 
-            if (inputArray.length == 0 || inputArray[inputArray.length - 1] <= minute)
-                break;
+            if (inputArray.length == 0 || inputArray[inputArray.length - 1] <= minute) break;
         }
 
         return count;
