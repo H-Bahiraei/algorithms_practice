@@ -1,4 +1,4 @@
-package recursive;
+package greedy;
 
 import java.util.Arrays;
 import java.util.Scanner;
