@@ -23,7 +23,7 @@ public class QueraActivitySelection {
         System.out.println(CalculateMaxActivities(activities, numbersOfActivities));
     }
 
-    static Integer CalculateMaxActivities(Activity arr[], int n) {
+    static Integer CalculateMaxActivities(Activity[] arr, int n) {
 
         Arrays.sort(arr, (a1, a2) -> a1.finish - a2.finish);
 
