@@ -13,6 +13,7 @@ public class Working {
 
     public static void main(String[] args) {
 
+        // TODO: https://medium.com/@bhaskarsharan/practice-java-streams-questions-8a76cbfee1be ans share your answers
 
         List<Student> myList = Arrays.asList(
                 new Student(1, "Rohit", "Mall", 30, "Male", "Mechanical Engineering", 2015, "Mumbai", 122),
@@ -97,9 +98,13 @@ public class Working {
 //        System.out.println( students1);
 
 
-        Integer integer = myList.stream().
-                sorted(Comparator.comparingInt(Student::getRank)).skip(1).findFirst().map(Student::getRank).get();
-        System.out.println(integer);
+
+        Student student1 = myList.stream().sorted((o1, o2) -> Integer.compare(o1.getRank(), o2.getRank())).skip(1).findFirst().get();
+        Student student2 = myList.stream().sorted(((o1, o2) -> ((Integer) o1.getRank()).compareTo((Integer) o2.getRank()))).skip(1).findFirst().get();
+        Student student3 = myList.stream().sorted(Comparator.comparing(Student::getRank).reversed()).skip(1).findFirst().get();
+        System.out.println( student1.getRank());
+        System.out.println( student2.getRank());
+        System.out.println( student3.getRank());
 
         List<Integer> myList2 = Arrays.asList(1, 3, 5, 89, 4, 24, 9, 45, 4, 35, 97, 43, 12, 45, 85, 36, 22);
 
