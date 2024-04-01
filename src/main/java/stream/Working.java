@@ -13,6 +13,7 @@ public class Working {
 
     public static void main(String[] args) {
 
+        // TODO: https://medium.com/@bhaskarsharan/practice-java-streams-questions-8a76cbfee1be ans share your answers
 
         List<Student> myList = Arrays.asList(
                 new Student(1, "Rohit", "Mall", 30, "Male", "Mechanical Engineering", 2015, "Mumbai", 122),
