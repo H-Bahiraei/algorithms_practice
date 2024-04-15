@@ -27,6 +27,7 @@ public class Working {
                 new Student(9, "Sonu", "Shankar", 27, "Female", "Computer Engineering", 2018, "Karnataka", 7),
                 new Student(10, "Shubham", "Pandey", 26, "Male", "Instrumentation Engineering", 2017, "Mumbai", 98));
 
+
         String str = new String();
         List<String> resultList = myList.stream().map(a -> a.getFirstName()).filter(a -> a.startsWith("A")).
                 collect(Collectors.toList());

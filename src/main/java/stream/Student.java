@@ -49,7 +49,7 @@ public class Student {
   * @param rank the rank
   */
  public Student(int id, String firstName, String lastName, int age, String gender, String departmantName,
-                int joinedYear, String city, int rank) {
+   int joinedYear, String city, int rank) {
   super();
   this.id = id;
   this.firstName = firstName;
@@ -232,8 +232,8 @@ public class Student {
  @Override
  public String toString() {
   return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age
-          + ", gender=" + gender + ", departmantName=" + departmantName + ", joinedYear=" + joinedYear + ", city="
-          + city + ", rank=" + rank + "]";
+    + ", gender=" + gender + ", departmantName=" + departmantName + ", joinedYear=" + joinedYear + ", city="
+    + city + ", rank=" + rank + "]";
  }
 
 }
