@@ -1,5 +1,7 @@
 package stream;
 
+import java.util.List;
+
 /**
  * @author Mehrad https://github.com/H-Bahiraei
  * @date 1/22/2024
@@ -7,46 +9,66 @@ package stream;
  * &
  */
 public class Employee {
+ private String id;
+ private String firstName;
+ private String lastName;
+ private int salary;
+ private int totalLaptopsAssigned;
+ // OneToMany
+ private List<Project> projects;
 
- String name;
- Boolean isMarried;
- Long salary;
-
- public String getName() {
-  return name;
+ Employee(){
  }
 
- public void setName(String name) {
-  this.name = name;
- }
-
- public Employee(String name, Boolean isMarried, Long salary) {
-  this.isMarried = isMarried;
+ public Employee(String id, String firstName, String lastName, int salary, int totalLaptopsAssigned,
+                 List<Project> projects) {
+  this.id = id;
+  this.firstName = firstName;
+  this.lastName = lastName;
   this.salary = salary;
-  this.name=name;
- }
-
- public Boolean getMarried() {
-  return isMarried;
- }
-
- public void setMarried(Boolean married) {
-  isMarried = married;
- }
-
- public Long getSalary() {
-  return salary;
- }
-
- public void setSalary(Long salary) {
-  this.salary = salary;
+  this.totalLaptopsAssigned = totalLaptopsAssigned;
+  this.projects = projects;
  }
 
  @Override
  public String toString() {
-  return "Employee{" +
-          "isMarried=" + isMarried +
-          ", salary=" + salary +
-          '}';
+  return "Employee [firstName=" + firstName + ", lastName=" + lastName + ", salary=" + salary + ", projects="
+          + projects + "]";
+ }
+ public String getId() {
+  return id;
+ }
+ public void setId(String id) {
+  this.id = id;
+ }
+ public String getFirstName() {
+  return firstName;
+ }
+ public void setFirstName(String firstName) {
+  this.firstName = firstName;
+ }
+ public String getLastName() {
+  return lastName;
+ }
+ public void setLastName(String lastName) {
+  this.lastName = lastName;
+ }
+ public int getSalary() {
+  return salary;
+ }
+ public void setSalary(int salary) {
+  this.salary = salary;
+ }
+ public List<Project> getProjects() {
+  return projects;
+ }
+ public void setProjects(List<Project> projects) {
+  this.projects = projects;
+ }
+ public int getTotalLaptopsAssigned() {
+  return totalLaptopsAssigned;
+ }
+ public void setTotalLaptopsAssigned(int totalLaptopsAssigned) {
+  this.totalLaptopsAssigned = totalLaptopsAssigned;
  }
 }

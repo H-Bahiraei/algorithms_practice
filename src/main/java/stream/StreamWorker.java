@@ -18,7 +18,7 @@ public class StreamWorker {
     public static void main(String[] args) {
         List<Car> carsList = Arrays.asList(new Car("Black", 30), new Car("Black", 90), new Car("Black", 50), new Car("white", 20), new Car("Yellow", 60));
 
-        List<Employee> employeesList = Arrays.asList(new Employee("Mehrad1", true, 999L), new Employee("Mehrad2", true, 1000L), new Employee("Mehrad3", true, 1001L), new Employee("Mehrad4", false, 998L), new Employee("Mehrad5", true, 1002L), new Employee("Mehrad6", true, 997L));
+//        List<Employee> employeesList = Arrays.asList(new Employee("Mehrad1", true, 999L), new Employee("Mehrad2", true, 1000L), new Employee("Mehrad3", true, 1001L), new Employee("Mehrad4", false, 998L), new Employee("Mehrad5", true, 1002L), new Employee("Mehrad6", true, 997L));
 
 
 //        employeesList.stream().
