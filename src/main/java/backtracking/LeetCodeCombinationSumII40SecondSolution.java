@@ -7,14 +7,45 @@ public class LeetCodeCombinationSumII40SecondSolution {
 
     public static void main(String[] args) {
 //        int[] myArray = {14,6,25,9,30,20,33,34,28,30,16,12,31,9,9,12,34,16,25,32,8,7,30,12,33,20,21,29,24,17,27,34,11,17,30,6,32,21,27,17,16,8,24,12,12,28,11,33,10,32,22,13,34,18,12};
-        int[] myArray = {10,1,2,7,6,1,5};
+        int[] myArray = {10, 1, 2, 7, 6, 1, 5};
 
 //        for (List<Integer> integers : combinationSum2(myArray, 27)) {
-        for (List<Integer> integers : combinationSum2(myArray, 8)) {
+        for (List<Integer> integers : combinationSum23(myArray, 8)) {
             System.out.println(integers);
         }
     }
 
+
+    public static List<List<Integer>> combinationSum23(int[] candidates, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(candidates);
+        backtrack3(candidates, new ArrayList<>(), target, result, 0);
+        return result;
+
+    }
+
+
+    public static void backtrack3(int[] selectionList, List<Integer> path, int target, List<List<Integer>> result, int startIndex) {
+
+        if (target == 0) {
+            result.add(new ArrayList<>(path));
+            return;
+        }
+
+        for (int i = startIndex; i < selectionList.length && selectionList[i] <= target; i++) {
+            Integer thisChoice = selectionList[i];
+
+            if (i != startIndex && selectionList[i] == selectionList[i - 1])
+                continue;
+
+            path.add(thisChoice);
+
+            backtrack3(selectionList, path, target - thisChoice, result, i + 1);
+            path.remove(path.size() - 1);
+
+        }
+
+    }
 
 
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
@@ -39,10 +70,6 @@ public class LeetCodeCombinationSumII40SecondSolution {
             path.remove(path.size() - 1);
         }
     }
-
-
-
-
 
 
     public static List<List<Integer>> combinationSum21(int[] candidates, int target) {
