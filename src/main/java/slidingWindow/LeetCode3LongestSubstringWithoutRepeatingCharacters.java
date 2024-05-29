@@ -10,7 +10,40 @@ import java.util.Map;
  * & #86 Beats 68.26% of users with Java
  */
 public class LeetCode3LongestSubstringWithoutRepeatingCharacters {
+    /*
+    FIRST WAY:
+    (a) b c a b c b b   max=1
+    (a b) c a b c b b   max=2
+    (a b c) a b c b b   max=3
+    a (b) c a b c b b   max=3
+    a (b c a) b c b b   max=3
+    a b (c) a b c b b   max=3
+    a b (c a b) c b b   max=3
+    a b c (a) b c b b   max=3
+    a b c (a b c) b b   max=3
+    a b c a b c b (b)   max=3
 
+    SECOND WAY:
+
+    (a) b c a b c b b   a:0     max=1
+    (a b c) a b c b b   a:0 b:1 c:2     max=3
+    a (b c a) b c b b   a:3 b:1 c:2     max=3
+    a b (c a b) c b b   a:3 b:4 c:2     max=3
+    a b c (a b c) b b   a:3 b:4 c:5     max=3
+    a b c a b (c b) b a   a:3 b:6 c:5     max=3
+    a b c a b c b (b) a  a:3 b:7 c:5     max=3
+    a b c a b c b (b a)  a:8 b:7 c:5     max=3
+
+
+
+    (a) b c a b c d  a:0    max:1
+    a b (c a b) c d  a:3 b:4 c:2    max:3
+    a b c (a b c) d  a:3 b:4 c:5    max:3
+    a b c (a b c d)  a:3 b:4 c:5 d:6    max:4
+
+
+
+    */
     public int lengthOfLongestSubstring(String s) {
         Map<Character, Integer> happendedChars = new HashMap<>();
         int leftIndex = 0;
